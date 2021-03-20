@@ -144,7 +144,6 @@ func TestUtil(t *testing.T) {
 
 	}
 
-
 	testID = 2
 	t.Logf("Test: %d:\tGiven the 2 rectangle, CheckIntersection method", testID)
 	{
@@ -176,7 +175,7 @@ func TestUtil(t *testing.T) {
 					rc2 := rectangle.NewRectangle(rt2, lb2)
 					intersection := util.CheckIntersection(rc1, rc2)
 
-					if (intersection != util.INTERSECTION) {
+					if intersection != util.INTERSECTION {
 						t.Fatalf("\t%s\tTest: %d:\trc1 & rc2 should INTERSECTION: %s", Failed, testID, intersection)
 					}
 					t.Logf("\t%s\tTest: %d:\trc1 & rc2 should INTERSECTION", Success, testID)
@@ -210,7 +209,7 @@ func TestUtil(t *testing.T) {
 					rc2 := rectangle.NewRectangle(rt2, lb2)
 					intersection := util.CheckIntersection(rc1, rc2)
 
-					if (intersection != util.NO_INTERSECTION) {
+					if intersection != util.NO_INTERSECTION {
 						t.Fatalf("\t%s\tTest: %d:\trc1 & rc2 should NO_INTERSECTION: %s", Failed, testID, intersection)
 					}
 					t.Logf("\t%s\tTest: %d:\trc1 & rc2 should NO_INTERSECTION", Success, testID)

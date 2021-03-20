@@ -450,7 +450,6 @@ func TestRectangle(t *testing.T) {
 
 	}
 
-
 	testID = 5
 	t.Logf("Test: %d:\tGiven the 1 rectangle and 1 point, check rectangle Contains Point", testID)
 	{
@@ -463,12 +462,11 @@ func TestRectangle(t *testing.T) {
 
 			p := rectangle.NewPoint(1, 1)
 
-			if (!rc1.ContainsPoint(p)) {
+			if !rc1.ContainsPoint(p) {
 				t.Fatalf("\t%s\tTest: %d:\tRectangle Should Contain Point", Failed, testID)
 			}
 			t.Logf("\t%s\tTest: %d:\tRectangle Should Contain Point", Success, testID)
 		}
-
 
 		t.Logf("\tTest: %d:\tRectangle Should not Contain Point.", testID)
 		{
@@ -478,11 +476,11 @@ func TestRectangle(t *testing.T) {
 
 			p := rectangle.NewPoint(-1, -1)
 
-			if (rc1.ContainsPoint(p)) {
+			if rc1.ContainsPoint(p) {
 				t.Fatalf("\t%s\tTest: %d:\tRectangle Should not Contain Point", Failed, testID)
 			}
 			t.Logf("\t%s\tTest: %d:\tRectangle Should not Contain Point", Success, testID)
-		}	
+		}
 	}
 
 	testID = 6
@@ -499,7 +497,7 @@ func TestRectangle(t *testing.T) {
 			rt2 := rectangle.NewPoint(15, 15)
 			rc2 := rectangle.NewRectangle(rt2, lb2)
 
-			if(!rc1.Intersect(rc2)) {
+			if !rc1.Intersect(rc2) {
 				t.Fatalf("\t%s\tTest: %d:\trc1 & rc2 should have intersection", Failed, testID)
 			}
 			t.Logf("\t%s\tTest: %d:\trc1 & rc2 should have intersection", Success, testID)
@@ -531,12 +529,12 @@ func TestRectangle(t *testing.T) {
 					rt2 := rectangle.NewPoint(points.a2, points.b2)
 					rc2 := rectangle.NewRectangle(rt2, lb2)
 
-					if(!rc1.Intersect(rc2)) {
+					if !rc1.Intersect(rc2) {
 						t.Fatalf("\t%s\tTest: %d:\trc1 & rc2 should have intersection", Failed, testID)
 					}
 					t.Logf("\t%s\tTest: %d:\trc1 & rc2 should have intersection", Success, testID)
 				})
-			}		
+			}
 		}
 
 		t.Logf("\tTest: %d:\tCheck rc1 & rc2 doesn't have intersection.", testID)
@@ -564,12 +562,12 @@ func TestRectangle(t *testing.T) {
 					rt2 := rectangle.NewPoint(points.a2, points.b2)
 					rc2 := rectangle.NewRectangle(rt2, lb2)
 
-					if(rc1.Intersect(rc2)) {
+					if rc1.Intersect(rc2) {
 						t.Fatalf("\t%s\tTest: %d:\trc1 & rc2 should not have intersection", Failed, testID)
 					}
 					t.Logf("\t%s\tTest: %d:\trc1 & rc2 should not have intersection", Success, testID)
 				})
-			}		
+			}
 		}
 	}
 }

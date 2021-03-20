@@ -139,23 +139,23 @@ func (r1 Rectangle) GetConnectedLinePoints(r2 Rectangle) []Point {
 }
 
 func (r1 Rectangle) Intersect(r2 Rectangle) bool {
-	if(r1.ContainsPoint(r2.GetLeftBottom())) {
+	if r1.ContainsPoint(r2.GetLeftBottom()) {
 		return !r1.ContainsPoint(r2.GetRightTop())
 	}
-	
-	if(r1.ContainsPoint(r2.GetLeftTop())) {
-		return !r1.ContainsPoint(r2.GetRightBottom())
-	} 
 
-	if(r1.ContainsPoint(r2.GetRightBottom())) {
+	if r1.ContainsPoint(r2.GetLeftTop()) {
+		return !r1.ContainsPoint(r2.GetRightBottom())
+	}
+
+	if r1.ContainsPoint(r2.GetRightBottom()) {
 		return !r1.ContainsPoint(r2.GetLeftTop())
 	}
 
-	if(r1.ContainsPoint(r2.GetRightTop())) {
+	if r1.ContainsPoint(r2.GetRightTop()) {
 		return !r1.ContainsPoint(r2.GetLeftBottom())
 	}
 
-	return false;
+	return false
 }
 
 func (r1 Rectangle) ContainsPoint(p Point) bool {
