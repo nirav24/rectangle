@@ -60,7 +60,6 @@ func getInt(val string) (int, error) {
 }
 
 func getRectangle(points []string) (rectangle.Rectangle, error) {
-	fmt.Printf("%v", points)
 	if len(points) != 4 {
 		return rectangle.Rectangle{}, errors.New("Invalid Numbers of argument given")
 	}
