@@ -26,6 +26,7 @@ const (
 	NOT_APPLICABLE Output = "N/A"
 )
 
+// Checks Whether there is any containment formed by 2 rectangles
 func CheckContainment(r1 rectangle.Rectangle, r2 rectangle.Rectangle) Output {
 	if r1.Contains(r2) || r2.Contains(r1) {
 		return CONTAINMENT
@@ -33,6 +34,7 @@ func CheckContainment(r1 rectangle.Rectangle, r2 rectangle.Rectangle) Output {
 	return NO_CONTAINMENT
 }
 
+// Checks adjacency type formed by 2 rectangles
 func CheckAdjacency(r1 rectangle.Rectangle, r2 rectangle.Rectangle) (Output, error) {
 	connectedLines := r1.GetConnectedLinePoints(r2)
 	if len(connectedLines) <= 0 {
@@ -75,6 +77,7 @@ func CheckAdjacency(r1 rectangle.Rectangle, r2 rectangle.Rectangle) (Output, err
 	return NO_ADJACENT, nil
 }
 
+// Checks Intersection type formed by 2 rectangles
 func CheckIntersection(r1 rectangle.Rectangle, r2 rectangle.Rectangle) Output {
 	if r1.Intersect(r2) || r2.Intersect(r1) {
 		return INTERSECTION
